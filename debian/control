@@ -1,0 +1,15 @@
+Source: pacstall
+Section: misc
+Priority: optional
+Maintainer: Uri Herrera <uri_herrera@nxos.org>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: http://nxos.org
+
+
+Package: pacstall
+Architecture: any
+Depends: curl, wget, unzip, build-essential
+Description: The AUR Ubuntu never had.
+ Pacstall will attempt to become the AUR Ubuntu wishes it had.
+

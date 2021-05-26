@@ -1,0 +1,12 @@
+#!/bin/bash
+
+puts () { printf "\n\n --- %s\n" "$*"; }
+add_keys () { apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $@; }
+
+#	Add key for repository.
+
+puts "ADDING REPOSITORY KEYS."
+
+ add_keys A03A4626
+
+apt -qq update
