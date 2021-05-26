@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: mesa-git
-Source: https://github.com/Nitrux/mesa-git.git
+Upstream-Name: pacstall
+Source: https://github.com/Nitrux/pacstall.git
 
 Files: *
 Copyright: 2020 Uri Herrera <uri_herrera@nxos.org>
