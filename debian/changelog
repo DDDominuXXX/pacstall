@@ -1,3 +1,9 @@
+pacstall (1.2-build2)  nitrux; urgency=medium
+
+  * Create package.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Tue, 25 May 2021 23:14:00 -0500
+
 pacstall (1.2-build1)  nitrux; urgency=medium
 
   * Create package.
