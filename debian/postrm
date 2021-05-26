@@ -1,14 +1,3 @@
 #!/bin/bash
 
-puts () { printf "\n\n --- %s\n" "$*"; }
-rm_keys () { apt-key del $@; }
-
-#	Remove key for repository.
-
-puts "REMOVING REPOSITORY KEYS."
-
- rm_keys 90935439
-
-rm /etc/apt/sources.list.d/mesa-git.list
-
-apt -qq update
+exit 0
