@@ -9,7 +9,7 @@ Homepage: http://nxos.org
 
 Package: pacstall
 Architecture: any
-Depends: curl, wget, unzip, build-essential
+Depends: curl, wget, stow, build-essential, unzip, fzf
 Description: The AUR Ubuntu never had.
  Pacstall will attempt to become the AUR Ubuntu wishes it had.
 
