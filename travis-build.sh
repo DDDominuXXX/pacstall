@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 apt -qq update
 apt -qq -yy install equivs curl git
 
@@ -35,7 +37,7 @@ chmod +x usr/share/pacstall/scripts/*
 
 echo "https://raw.githubusercontent.com/pacstall/pacstall-programs/master" > usr/share/pacstall/repo/pacstallrepo.txt
 
-ls -l
+ls -l bin/pacstall usr/share/bash-completion/completions/pacstall usr/share/man/man8/pacstall.8.gz usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
 
 ### Build Deb
 mkdir source
