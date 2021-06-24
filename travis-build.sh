@@ -19,11 +19,11 @@ curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall
 
 {
 	printf "%s %s\n" \
-		app				"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
-		appimaged		"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
-		appimagetool	"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
-		wine			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
-        wine			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
+		change-repo.sh		"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
+		search.sh		    "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
+		download.sh	        "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
+		install-local.sh	"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
+        upgrade.sh			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
 } | {
 	while read name url; do
 		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/pacstall/scripts
