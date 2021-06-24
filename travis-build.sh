@@ -21,19 +21,40 @@ rm -r usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-l
 
 echo
 
-wget -q https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall -O bin/pacstall
-wget -q  https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash -O usr/share/bash-completion/completions/pacstall
-wget -q  https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz -O usr/share/man/man8/pacstall.8.gz
-
-echo
+{
+	printf "%s %s\n" \
+        pacstall            "https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall"
+} | {
+	while read name url; do
+		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o bin/$name
+	done
+}
 
 {
 	printf "%s %s\n" \
-		change-repo.sh		"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
-		search.sh		    "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
-		download.sh	        "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
-		install-local.sh	"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
-        upgrade.sh			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
+        pacstall            "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash"
+} | {
+	while read name url; do
+		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/bash-completion/completions/$name
+	done
+}
+
+{
+	printf "%s %s\n" \
+        pacstall.8.gz       "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz"
+} | {
+	while read name url; do
+		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/man/man8/$name
+	done
+}
+
+{
+	printf "%s %s\n" \
+        change-repo.sh      "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
+        search.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
+        download.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
+        install-local.sh    "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
+        upgrade.sh          "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
 } | {
 	while read name url; do
 		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/pacstall/scripts/$name
