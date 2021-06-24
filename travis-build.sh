@@ -9,6 +9,34 @@ apt-get -qq --yes dist-upgrade
 apt-get -qq --yes install devscripts lintian build-essential automake autotools-dev
 mk-build-deps -i -t "apt-get --yes" -r
 
+### Update pacstall
+
+ls -l bin/pacstall usr/share/bash-completion/completions/pacstall usr/share/man/man8/pacstall.8.gz usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+
+curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall > bin/pacstall
+curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash > usr/share/bash-completion/completions/pacstall
+curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz > usr/share/man/man8/pacstall.8.gz
+
+{
+	printf "%s %s\n" \
+		app				"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
+		appimaged		"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
+		appimagetool	"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
+		wine			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
+        wine			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
+} | {
+	while read name url; do
+		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/pacstall/scripts
+	done
+}
+
+chmod +x bin/pacstall
+chmod +x usr/share/pacstall/scripts/*
+
+echo "https://raw.githubusercontent.com/pacstall/pacstall-programs/master" > usr/share/pacstall/repo/pacstallrepo.txt
+
+ls -l
+
 ### Build Deb
 mkdir source
 mv ./* source/ # Hack for debuild

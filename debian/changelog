@@ -1,3 +1,9 @@
+pacstall (1.4-build5)  nitrux; urgency=medium
+
+  * Update pacstall.
+
+ -- Uri Herrera <uri_herrera@nxos.org>  Wed, 23 Jun 2021 21:13:00 -0500
+
 pacstall (1.2-build4)  nitrux; urgency=medium
 
   * Update package.
