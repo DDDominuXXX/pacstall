@@ -13,11 +13,21 @@ mk-build-deps -i -t "apt-get --yes" -r
 
 ### Update pacstall
 
-ls -l bin/pacstall usr/share/bash-completion/completions/pacstall usr/share/man/man8/pacstall.8.gz usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+ls -l \
+    bin/pacstall \
+    usr/share/bash-completion/completions/pacstall \
+    usr/share/man/man8/pacstall.8.gz \
+    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+
+rm usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+
+echo
 
 curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall > bin/pacstall
 curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash > usr/share/bash-completion/completions/pacstall
 curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz > usr/share/man/man8/pacstall.8.gz
+
+echo
 
 {
 	printf "%s %s\n" \
@@ -37,7 +47,13 @@ chmod +x usr/share/pacstall/scripts/*
 
 echo "https://raw.githubusercontent.com/pacstall/pacstall-programs/master" > usr/share/pacstall/repo/pacstallrepo.txt
 
-ls -l bin/pacstall usr/share/bash-completion/completions/pacstall usr/share/man/man8/pacstall.8.gz usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+echo
+
+ls -l \
+    bin/pacstall \
+    usr/share/bash-completion/completions/pacstall \
+    usr/share/man/man8/pacstall.8.gz \
+    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
 
 ### Build Deb
 mkdir source
