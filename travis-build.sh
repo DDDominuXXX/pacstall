@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -xe
-
 apt -qq update
 apt -qq -yy install equivs curl git
 
@@ -19,7 +17,7 @@ ls -l \
     usr/share/man/man8/pacstall.8.gz \
     usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
 
-rm usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+rm -r usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
 
 echo
 
