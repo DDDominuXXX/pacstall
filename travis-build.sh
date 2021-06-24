@@ -28,7 +28,7 @@ curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall
         upgrade.sh			"https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
 } | {
 	while read name url; do
-		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/pacstall/scripts
+		axel -a -n 2 -q -k -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36" "$url" -o usr/share/pacstall/scripts/$name
 	done
 }
 
