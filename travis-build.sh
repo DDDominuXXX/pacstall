@@ -10,6 +10,7 @@ apt-get -qq --yes install devscripts lintian build-essential automake autotools-
 mk-build-deps -i -t "apt-get --yes" -r
 
 ### Update pacstall
+echo
 
 ls -l \
     bin/pacstall \
