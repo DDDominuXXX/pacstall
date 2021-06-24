@@ -53,6 +53,8 @@ ls -l \
     usr/share/man/man8/pacstall.8.gz \
     usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
 
+echo
+
 ### Build Deb
 mkdir source
 mv ./* source/ # Hack for debuild
