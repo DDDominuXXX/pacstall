@@ -12,13 +12,11 @@ mk-build-deps -i -t "apt-get --yes" -r
 ### Update pacstall
 echo
 
-ls -l \
-    bin/pacstall \
-    usr/share/bash-completion/completions/pacstall \
-    usr/share/man/man8/pacstall.8.gz \
-    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
-
-rm -r usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+mkdir -p \
+        bin \
+        usr/share/bash-completion/completions \
+        usr/share/man/man8/ \
+        usr/share/pacstall/scripts
 
 echo
 
