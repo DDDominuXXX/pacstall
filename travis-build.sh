@@ -21,9 +21,9 @@ rm -r usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-l
 
 echo
 
-curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall > bin/pacstall
-curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash > usr/share/bash-completion/completions/pacstall
-curl -O https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz > usr/share/man/man8/pacstall.8.gz
+wget -q https://raw.githubusercontent.com/pacstall/pacstall/master/pacstall -O bin/pacstall
+wget -q  https://raw.githubusercontent.com/pacstall/pacstall/master/misc/completion/bash -O usr/share/bash-completion/completions/pacstall
+wget -q  https://raw.githubusercontent.com/pacstall/pacstall/master/misc/pacstall.8.gz -O usr/share/man/man8/pacstall.8.gz
 
 echo
 
