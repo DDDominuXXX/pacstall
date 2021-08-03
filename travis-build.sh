@@ -67,15 +67,13 @@ echo
 chmod +x bin/pacstall
 chmod +x usr/share/pacstall/scripts/*
 
-echo "https://raw.githubusercontent.com/pacstall/pacstall-programs/master" > usr/share/pacstall/repo/pacstallrepo.txt
-
-echo
+echo 'https://raw.githubusercontent.com/pacstall/pacstall-programs/master' > usr/share/pacstall/pacstallrepo.txt
 
 ls -l \
     bin/pacstall \
     usr/share/bash-completion/completions/pacstall \
     usr/share/man/man8/pacstall.8.gz \
-    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,query-info.sh,remove.sh,search.sh,update.sh,upgrade.sh}
+    usr/share/pacstall/scripts/{add-repo.sh,download.sh,install-local.sh,query-info.sh,remove.sh,search.sh,update.sh,upgrade.sh}
 
 echo
 
