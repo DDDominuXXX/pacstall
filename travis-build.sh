@@ -50,10 +50,14 @@ echo
 
 {
 	printf "%s %s\n" \
-        change-repo.sh      "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/change-repo.sh" \
-        search.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
-        download.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
+        change-repo.sh      "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/add-repo.sh" \
+        search.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
+        download.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/error_log.sh" \
         install-local.sh    "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
+        query-info.sh       "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/query-info.sh" \
+        remove.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/remove.sh" \
+        search.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/search.sh" \
+        update.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/update.sh " \
         upgrade.sh          "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/upgrade.sh"
 } | {
 	while read name url; do
@@ -72,7 +76,7 @@ ls -l \
     bin/pacstall \
     usr/share/bash-completion/completions/pacstall \
     usr/share/man/man8/pacstall.8.gz \
-    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,upgrade.sh}
+    usr/share/pacstall/scripts/{change-repo.sh,search.sh,download.sh,install-local.sh,query-info.sh,remove.sh,search.sh,update.sh,upgrade.sh}
 
 echo
 
