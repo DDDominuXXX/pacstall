@@ -1,11 +1,13 @@
 #!/bin/bash
 
+set -xe
+
 apt -qq update
-apt -qq -yy install equivs curl git
+apt -qq -yy install equivs git
 
 ### Install Dependencies
 apt-get -qq --yes update
-apt-get -qq --yes install devscripts lintian build-essential automake autotools-dev axel
+apt-get -qq --yes install devscripts lintian axel
 mk-build-deps -i -t "apt-get --yes" -r
 
 ### Update pacstall
