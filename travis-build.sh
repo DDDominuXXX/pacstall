@@ -50,9 +50,8 @@ echo
 
 {
 	printf "%s %s\n" \
-        change-repo.sh      "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/add-repo.sh" \
-        search.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
-        download.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/error_log.sh" \
+        add-repo.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/add-repo.sh" \
+        download.sh         "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/download.sh" \
         install-local.sh    "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/install-local.sh" \
         query-info.sh       "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/query-info.sh" \
         remove.sh           "https://raw.githubusercontent.com/pacstall/pacstall/master/misc/scripts/remove.sh" \
